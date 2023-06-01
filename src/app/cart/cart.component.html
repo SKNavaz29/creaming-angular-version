@@ -1,0 +1,58 @@
+<div>
+  <button class="close-button" (click)="closeModal()"><i class="bi bi-x"></i></button>
+  <div *ngIf="items.length == 0" class="px-5">
+       <div class="empty_icon">
+      <i class="bi bi-emoji-frown-fill"></i>
+    </div> 
+    <div class="empty_text">
+      <h1>Your cart is Empty</h1>
+    </div>
+  </div>
+  <div class="table-responsive" *ngIf="items.length >0">
+
+    <table class="table table-bordered table-hover">
+      <thead class='thead'>
+        <tr>
+          <th>S.No</th>
+          <th>Image</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items;index as i">
+          <td>{{i+1}}</td>
+            <td>
+                <img
+                  class="img-thumbnail .img-responsive"
+                  src="{{item.image}}"
+                  style="height:80px;width:80px;"
+                />  
+              </td>
+            
+          <td>{{item.id}}</td>        
+          <td>{{item.name}}</td>
+          <td>{{item.price | currency:"INR":"symbol"}}</td>
+          <td>
+            <button
+              class="btn btn-danger"
+              (click)="deleteItem(item.id)"
+            >
+              Remove Item From Cart
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3"></td>
+          <td>Qty {{totalQuantity}}</td>
+          <td colspan="2">Total Price {{Total | currency:"INR":"symbol"}}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+

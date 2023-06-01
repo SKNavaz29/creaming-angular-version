@@ -1,0 +1,22 @@
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary rounded">
+        <div class="container-fluid">                
+            <div class="collapse navbar-collapse">
+                <a class="navbar-brand col-lg-3">Creaming</a>
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                <li class="nav-item "><a class="nav-link" routerLink="/home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="openoffer('100ms', '100ms')">Offer</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="openaboutus('100ms', '100ms')">About Us</a></li>
+                </ul>
+                <button *ngIf="cartCount==0" class="checkout" (click)="openDialog('0ms', '0ms')" type="button">
+                    <i class="bi bi-basket3"></i></button>
+                <button *ngIf="cartCount>0" class="checkout" (click)="openDialog('0ms', '0ms')" type="button">
+                    <span class="counter">{{cartCount}}</span><i class="bi bi-basket3-fill"></i>
+                </button>
+            </div>
+        </div>
+    </nav>    
+</header>
+
+  

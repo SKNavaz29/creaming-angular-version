@@ -1,0 +1,285 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$CreamingWeb-primary: mat.define-palette(mat.$red-palette);
+$CreamingWeb-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$CreamingWeb-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$CreamingWeb-theme: mat.define-light-theme((
+  color: (
+    primary: $CreamingWeb-primary,
+    accent: $CreamingWeb-accent,
+    warn: $CreamingWeb-warn,
+    
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($CreamingWeb-theme);
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+*{
+  font-family:'Arimo', sans-serif;
+
+}
+
+.navbar{
+
+  background-color:#FFF0E9;
+}
+
+
+header{
+  background-color:#FFF0E9;
+}
+
+.navbar-brand{
+
+  font-weight:bolder;
+  padding-left: 10%;
+  background-color:#FFF0E9;
+}
+
+
+#banner {
+  background-color:#FFF0E9;
+  padding-bottom: 10%;
+
+
+  .home-pic{
+
+    max-width: 80%;
+    height: auto;
+    padding:2.5%;
+    margin-left: 10%;
+    
+  }
+
+  #banner-text{
+
+    padding-top: 10%;
+    font-size: 300%;
+    text-align: center;
+    color: #D55452;    
+  }
+}
+
+
+
+#itemhigh {
+  border-radius: 25px;
+  background: #ffffff;
+
+  width: 80%;
+  margin: 0 auto;
+  position:relative;
+  transform: translateY(-50%);
+  box-shadow: 1px 2px 2px 2px rgba(0,0,0,0.1);
+}
+
+#about {
+  background: #ffffff;
+  color: #D55452;
+
+  width: 80%;
+  margin: -2.5% auto;
+  
+  h1{
+    font-weight: bolder;
+  }
+
+  img{
+    max-width: 75%;    
+    
+  } 
+  h1,p {
+    text-align: justify;
+
+
+    
+  }
+}
+
+#item{
+  text-align: center;
+  
+}
+
+
+.pd{
+  margin: 2% auto;
+  max-width: 15%;
+  margin-bottom: -1%;
+  float: none;
+}
+
+#hsitems {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #D55452;
+
+ button:hover {
+  background-color: #ffffff;
+color:#D55452;
+}
+  h2{
+    font-weight: bolder;
+    
+  }
+}
+
+.buy{
+background-color: #D55452;
+color:#ffffff;
+
+}
+
+.card {
+  background-color:#FFF0E9;
+  border:none;
+  border-radius:10% !important;
+  box-shadow: 3px 2px 3px 2px rgba(0,0,0,0.2);
+  margin: 10%;
+  
+  h5{
+
+    font-size: 2vw;
+  }
+
+  img {
+    background-color:#ffffff;
+    border-radius:10%;   
+    padding: 10%;
+    
+  }
+
+  .card-footer{
+    border:none;
+    background:none;
+    margin-top: -5%;
+  }
+  button{
+  padding-top:2%;
+  padding-bottom:2%;
+  padding-right:7.5%;
+  padding-left:7.5%;
+
+  span{
+    font-size: 1.25vw;
+  }
+  i{
+    font-size: 1.25vw;
+  }
+  
+
+  }
+  
+}
+
+
+.ratings{
+
+margin :2%;
+
+
+}
+
+
+
+
+@media (max-width: 768px) {
+  .sml-0 {
+    margin-left: 0%;
+  }
+
+
+
+
+}
+
+
+footer{
+
+  background-color: #FFF0E9;
+  width: 100%;
+  color:#D55452;
+
+  h1{
+    font-weight: bolder;
+  }
+  p{
+    color:#6b6b6b
+  }
+  .bi{
+    font-size: 40px;
+    margin: 3%;
+    color:#6b6b6b
+  }
+}
+
+
+
+.checkout{
+  color: #000000;
+  background:none;
+  padding: auto;
+  border-radius: 5px;
+  border:none;
+  font-size: xx-large;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.counter{
+  font-weight: light;
+  font-size: small;
+  display:block; 
+  position: absolute;
+  color:#FFF0E9;
+  margin-left: 13px;
+  margin-top:22px
+}
+
+
+.empty_text{
+  color:#D55452;
+  text-align: center;
+}
+
+.empty_icon{
+  padding: auto;
+  font-size: xx-large;
+  color:#D55452;
+  text-align: center;
+}
+
+
+.close-button{
+  float: right;
+  top:-24px;
+  right:-10px;
+  color: #D55452;
+}

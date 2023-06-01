@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<div class="row" id="hsitems" >
+    <h2>Our Menu</h2>
+    <div class="card-deck col-md-3" *ngFor="let item of Items">
+        <div class="card">
+            <img class="card-img-top" src="{{item.image }}" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title ">{{ item.name }}</h5>
+                <h5 class="card-text ">{{ item.price |currency:"INR":"symbol" }}</h5>
+                <button type="button" class="btn buy" (click)="addToCart(item)"><i class="bi bi-basket2-fill"></i><span>Add to basket</span></button>
+            </div>
+            <div class="card-footer text-center ">
+                <div >
+                    <i class="bi bi-star-fill ratings" *ngFor="let rating of [].constructor(item.rating)"></i>
+                </div>                
+                
+            </div>
+        </div>
+    </div>
+    <div class="error" [hidden]="Items || errMess">
+        <mat-spinner class="orange-spinner mx-auto"></mat-spinner><h4>Menu is Loading . . . Please Wait</h4>
+      
+    </div>
+    <div fxFlex *ngIf="errMess">
+        <h2>Error</h2>
+        <h4>{{errMess}}</h4>
+      </div>
+    
+</div>
