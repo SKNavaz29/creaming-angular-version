@@ -1,0 +1,44 @@
+.bg{
+
+    background-color: antiquewhite;
+}
+
+@media (min-width: 768px) {
+    .pull-right{
+        
+        float: right;
+        position: relative;    
+        left: 85%;
+        }
+        
+        
+ 
+}
+
+@media (max-width: 768px) {
+    
+
+.navbar-collapse{
+
+
+    text-align: center;
+    font-size: large;
+
+    
+   
+  }
+
+
+
+        
+ 
+}
+
+a:hover{
+    color: #D55452;
+}
+
+
+   
+
+

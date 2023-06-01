@@ -19,7 +19,7 @@ export class HeaderComponent {
   constructor(
     private cartService: CartService, public dialog: MatDialog
   ) {}
-
+  public isCollapsed = true;
 
   ngOnInit() {
     this.cartService.getItems().subscribe(item=>{

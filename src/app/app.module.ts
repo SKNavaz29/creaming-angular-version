@@ -25,6 +25,7 @@ import { baseURL } from './shared/baseurl';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 import { HighlightDirective } from './highlight.directive';
 import { CartComponent } from './cart/cart.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CartComponent } from './cart/cart.component';
     HttpClientModule,
     MatButtonModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgbModule
   ],
   providers: [ItemService,{provide: LocationStrategy, useClass: HashLocationStrategy},ProcessHTTPMsgService,
     {provide:'BaseURL',useValue:baseURL}],

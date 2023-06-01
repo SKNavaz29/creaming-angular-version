@@ -8,7 +8,11 @@
             <div class="card-body text-center">
                 <h5 class="card-title ">{{ item.name }}</h5>
                 <h5 class="card-text ">{{ item.price |currency:"INR":"symbol" }}</h5>
-                <button type="button" class="btn buy" (click)="addToCart(item)"><i class="bi bi-basket2-fill"></i><span>Add to basket</span></button>
+                <button type="button" class="btn buy" (click)="addToCart(item)">
+                    <div id="cart">
+                        <i class="bi bi-basket2-fill"></i><span>Add to basket</span>                        
+                    </div>
+                </button>
             </div>
             <div class="card-footer text-center ">
                 <div >
@@ -28,3 +32,4 @@
       </div>
     
 </div>
+<app-footer></app-footer>
